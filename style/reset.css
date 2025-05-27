@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/* ESTILOS GLOBAIS */
+:root {
+    --primary-color:#FF710D;
+    --secundary-color:orange;
+    --background-color: #181818;
+    --text-color-primary:#f8f9fa;
+    --text-color-secundary:#adb5bd;
+}
+
+body {
+    font-family: "lato",sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color-primary);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Para rolagem suave nos links */
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn.primary {
+    background-color: var(--primary-color);
+    color: var(--text-color-primary);
+}
+
+.btn.secundary {
+    background-color: transparent;
+    color: var(--text-color-primary);
+    border: 1px solid var(--text-color-secundary);
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
