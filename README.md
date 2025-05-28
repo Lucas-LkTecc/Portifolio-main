@@ -9,7 +9,9 @@ dia 2 {27/05/2025} hj vamos dar inicio a o css, e adicionar as cores que vamos u
 -Essas serão as cores: 
     --primary-color:#FF710D;
     --secundary-color: orange;
-    --background-color: #181818;
+    --background-color: #121212;
     --text-color-primary:#f8f9fa;
     --text-color-secundary:#adb5bd;
 por hj foi isso fiz o reset.css e o header do projeto
+
+dia 3 {28/05/2025} hj fizemos algumas atualizações no projeto, estou conseguindo deixar bem próximo do que eu quero e do que desenhei no figma, vou adicionar responsividade e encerrar por hj.
