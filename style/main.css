@@ -147,3 +147,190 @@ header {
     height: 125%;
     object-fit: cover; /* Garante que a imagem cubra a área sem distorção */
 }
+
+/* --- Seção de Serviços --- */
+.services-section {
+    padding: 6rem 2rem; /* Padding superior e inferior para espaçamento */
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.services-section h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block; /* Para centralizar o sublinhado se houver */
+}
+
+/* Linha de destaque abaixo do título "Serviços" (como no Figma) */
+.services-section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--text-color-secundary);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.services-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /* Espaço entre os cards */
+    flex-wrap: wrap; /* Permite que os cards quebrem a linha */
+}
+
+.service-card {
+    background-color: #1B1B1B;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 450px; /* Largura máxima para cada card */
+    flex: 1; /* Permite que o card cresça */
+    min-width: 300px; /* Tamanho mínimo para o card antes de quebrar */
+    transition: transform 0.3s ease, box-shadow 00.3s ease;
+}
+
+.service-card-ui {
+    background-color: #1B1B1B;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 450px; /* Largura máxima para cada card */
+    flex: 1; /* Permite que o card cresça */
+    min-width: 300px; /* Tamanho mínimo para o card antes de quebrar */
+    transition: transform 0.3s ease, box-shadow 00.3s ease;
+}
+
+.service-card:hover {
+    transform: translate(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 20px var(--primary-color);
+}
+
+.service-card-ui:hover {
+    transform: translate(10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 20px var(--primary-color);
+}
+
+.service-card .icon {
+    font-size: 4rem;
+    color: orangered;
+    margin-bottom: 1.5rem;
+}
+
+.service-card-ui .icon {
+    font-size: 4rem;
+    color: orangered;
+    margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.service-card-ui h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: var(--text-color-secundary);
+}
+
+.service-card-ui p {
+    font-size: 1rem;
+    color: var(--text-color-secundary);
+}
+
+/* --- Seção Sobre Mim --- */
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 4rem; /* Espaço entre a imagem e o conteúdo */
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+}
+
+.about-image {
+    background-color: #1B1B1B;
+    flex-shrink: 0; /* Impede que a imagem encolha e distorça */
+    width: 300px; /* Largura da div que conterá a imagem */
+    height: 400px; /* Altura da div que conterá a imagem */
+    border-radius: 145px 145px 10px 10px; /* Arredonda a div para se tornar um círculo */
+    overflow: hidden; /* Esconde o que estiver fora do círculo */
+    display: flex; /* Para centralizar a imagem dentro da div */
+    justify-content: center;
+    align-items: center;
+    margin-right: 2rem; /* Espaçamento à direita da imagem */
+}
+
+.about-image img {
+    width: 200%;
+    height: 125%;
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorção */
+}
+
+.about-content {
+    flex: 1; /* Permite que o conteúdo ocupe o espaço restante */
+    min-width: 300px; /* Garante um tamanho mínimo para o conteúdo */
+}
+
+.about-content h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* Linha de destaque abaixo do título "Sobre Mim" */
+.about-content h2::after {
+    content: '';
+    display: block;
+    width: 240px;
+    height: 4px;
+    background-color: var(--text-color-secundary);
+    margin: 10px 0 0; /* Alinhado à esquerda como o título */
+    border-radius: 2px;
+}
+
+.about-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--text-color-secundary);
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.about-content .btn {
+    margin-top: 1rem;
+    margin-bottom: 3rem; /* Espaçamento entre o botão e os ícones */
+}
+
+.tech-icons {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os ícones quebrem a linha */
+    gap: 5.0rem; /* Espaçamento entre os ícones */
+    margin-top: 2rem;
+    justify-content: flex-start; /* Alinha os ícones à esquerda */
+}
+
+.tech-icons img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.tech-icons img:hover {
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
