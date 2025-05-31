@@ -18,3 +18,7 @@ dia 3 {28/05/2025} hj fizemos algumas atualizações no projeto, estou conseguin
 
 Dia 4 {29/05/2025} hoje vamos retomar o css realizando a estilização do projeto;
 hj foi um dia produtivo consegui estilizar ate a sessão de "Sobre mim" e fiz algumas modificações nas imagens das tecnologias, nos textos e acrescentei um dos serviços que estava faltando.
+
+Dia 5 {30/05/2025} hj vamos dar continuidade ao projeto e vamos entrar na parte de portifólio, onde vou colocar meu projetos que realizei durantes os cursos que fiz.
+- acrescentei a parte do portifólio ao HTML, acrescentei as imagens dos projetos que realizei.
+- estilizei uma parte do css. vou par por hj na parte dos projetos faltando ajustar as imagens dos projetos e responsividade.

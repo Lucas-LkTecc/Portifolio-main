@@ -334,3 +334,72 @@ header {
 .tech-icons img:hover {
     transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
 }
+
+/* --- Seção de Portfólio --- */
+.portfolio-section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center; /* Centraliza o título e os filtros */
+}
+
+.portfolio-section h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+}
+
+.portfolio-section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--text-color-secundary);
+    margin: 10px auto 0; /* Centraliza a linha */
+    border-radius: 2px;
+}
+
+.portfolio-filters {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center; /* Centraliza os botões de filtro */
+    flex-wrap: wrap; /* Permite que os filtros quebrem a linha */
+    gap: 1.5rem; /* Espaço entre os botões */
+}
+
+.portfolio-filters .filter-btn {
+    background-color: #1B1B1B; /* Fundo dos botões de filtro */
+    color: var(--text-color-secundary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px; /* Botões mais arredondados */
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.portfolio-filters .filter-btn:hover, 
+.portfolio-filters .filter-btn.active {
+    background-color: var(--primary-color);
+    color: var(--text-color-primary3);
+    border-color: var(--primary-color);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grade responsiva */
+    gap: 2rem; /* Espaço entre os cards de projeto */
+}
+
+.portfolio-item {
+    background-color: #1B1B1B;
+    border-radius: 10px;
+    overflow: hidden; /* Garante que a imagem se ajuste ao border-radius */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    position: relative; /* Para possíveis overlays ou ícones */
+}
+
