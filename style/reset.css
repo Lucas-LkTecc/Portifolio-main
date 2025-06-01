@@ -65,9 +65,15 @@ a:hover {
         text-align: center;
     }
 
-    .hero-image {
+     .hero-image {
         order: 1; /* Garante que a imagem fique acima do conteúdo */
         margin-bottom: 2rem;
+        width: 70vw; /* Ajusta a largura da imagem para 70% da largura da viewport */
+        height: 70vw; /* Mantém a altura igual à largura para um círculo perfeito */
+        max-width: 300px; /* Define um tamanho máximo para a imagem (ex: 300px) */
+        max-height: 300px; /* Garante que a altura não exceda o max-width */
+        margin-left: auto; /* Centraliza a imagem */
+        margin-right: auto; /* Centraliza a imagem */
     }
 
     .hero-content h1 {
@@ -138,5 +144,38 @@ a:hover {
     }
     .about-content h2 {
         font-size: 2.5rem;
+    }
+}
+
+/* Responsividade para a seção de Portfólio */
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        gap: 1.5rem;
+    }
+    .portfolio-item {
+        max-width: 90%; /* Limita a largura dos cards para melhor visualização */
+        margin: 0 auto; /* Centraliza os cards */
+    }
+}
+
+/* Responsividade para a seção de Contato */
+@media (max-width: 768px) {
+    .contact-form .form-group {
+        flex-direction: column; /* Campos empilhados em telas menores */
+        gap: 1rem;
+    }
+}
+
+/* Responsividade para o Rodapé */
+@media (max-width: 768px) {
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .footer-links a {
+        margin: 0; /* Remove margem lateral quando empilhado */
     }
 }

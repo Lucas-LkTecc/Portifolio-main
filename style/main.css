@@ -403,3 +403,151 @@ header {
     position: relative; /* Para possíveis overlays ou ícones */
 }
 
+.portfolio-item:hover {
+    transform: translate(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 350px; /* Altura fixa para as imagens dos projetos */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorção */
+    display: block; /* Remove o espaço extra abaixo da imagem */
+} 
+
+.portfolio-item h3 {
+    font-size: 1.5rem;
+    margin: 1.5rem 1.5rem 0.5rem;
+    color: var(--primary-color);
+}
+
+.portfolio-item p {
+    font-size: 0.95rem;
+    color: var(--text-color-secundary);
+    margin: 0 1.5rem 1.5rem;
+}
+
+/* --- Seção de Contato --- */
+.contact-section {
+    padding: 6rem 2rem;
+    max-width: 800px; /* Limita a largura do formulário para melhor visualização */
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* Linha de destaque abaixo do título "Contate-me" */
+.contact-section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--text-color-secundary);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column; /* Coloca os campos em coluna */
+    gap: 1.5rem; /* Espaço entre os grupos de formulário */
+}
+
+.contact-form .form-group {
+    display: flex;
+    gap: 1.5rem; /* Espaço entre os campos (Nome e Email) */
+    flex-wrap: wrap; /* Permite que os campos quebrem a linha */
+}
+
+.contact-form .form-group input,
+.contact-form .form-group textarea {
+    flex: 1; /* Faz os inputs ocuparem o espaço disponível */
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    background-color: #1B1B1B; /* Fundo escuro para os campos */
+    color: var(--text-color-secundary);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    min-width: 280px; /* Garante que os campos não fiquem muito pequenos */
+}
+
+.contact-form .form-group input:focus, 
+.contact-form .form-group textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+.contact-form .form-group textarea {
+    resize: vertical; /* Permite redimensionamento vertical */
+    min-height: 120px; /* Altura mínima para a área de texto */
+}
+
+/* Estilo para placeholder */
+.contact-form .form-group input::placeholder,
+.contact-form .form-group textarea::placeholder {
+    color: var(--text-color-secundary);
+    opacity: 0.7;
+}
+
+.contact-form .btn.primary {
+    align-self: center;
+    width: fit-content;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+/* --- Rodapé --- */
+footer {
+    background-color: #1B1B1B;
+    color: var(--text-color-secundary);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Uma borda sutil no topo */
+}
+
+.footer-links {
+    margin-bottom: 1.5rem;
+}
+
+.footer-links a {
+    color: var(--text-color-secundary);
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.footer-social-links {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.footer-social-links .social-icon {
+    display: inline-block;
+    color: var(--text-color-secundary);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-social-links .social-icon:hover {
+    color: orangered;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    margin-top: 2rem;
+    color: var(--text-color-secundary);
+}

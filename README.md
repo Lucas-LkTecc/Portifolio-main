@@ -22,3 +22,5 @@ hj foi um dia produtivo consegui estilizar ate a sessão de "Sobre mim" e fiz al
 Dia 5 {30/05/2025} hj vamos dar continuidade ao projeto e vamos entrar na parte de portifólio, onde vou colocar meu projetos que realizei durantes os cursos que fiz.
 - acrescentei a parte do portifólio ao HTML, acrescentei as imagens dos projetos que realizei.
 - estilizei uma parte do css. vou par por hj na parte dos projetos faltando ajustar as imagens dos projetos e responsividade.
+
+Dia 06 {31/05/2025} hj vamos retomar de onde paramos, pretendo terminar essa parte do portifólio hj e realizar algumas alterações se for necessario, tambem pretendo 
