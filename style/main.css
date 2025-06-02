@@ -9,6 +9,31 @@ header {
     z-index: 100; /* Garante que o cabeçalho fique acima de outros elementos */
 }
 
+/* --- Menu Hambúrguer --- */
+.hamburger-menu {
+    display: none; /* Por padrão, oculto em telas grandes */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 200; /* Garante que fique acima de outros elementos */
+}
+
+.hamburger-menu .bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Transição para animação de X */
+}
+/* Esconde os links de navegação e o botão de contato em telas pequenas por padrão */
+.navbar .nav-links,
+.navbar .contact-button {
+    /* Por enquanto, vamos ocultá-los apenas via media query. */
+    /* O JS vai gerenciar a visibilidade quando o menu estiver aberto. */
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;

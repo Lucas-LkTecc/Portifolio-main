@@ -94,6 +94,70 @@ a:hover {
         gap: 1rem;
     }
 }
+/* Responsividade do menu 'Hamburguer' */
+@media (max-width: 768px) { /* OU 992px, dependendo da sua preferência */
+    /* --- Ajustes para o cabeçalho em mobile --- */
+    
+    .navbar {
+        flex-wrap: wrap; /*Permite que o logo e hambúrguer fiquem em uma linha, e o menu abaixo */
+        justify-content: space-between; /* Mantém logo e hambúrguer nas pontas */
+    }
+
+    .navbar .contact-button {
+        display: none; /* Oculta o botão de contato em telas pequenas */
+    }
+
+    .hamburger-menu {
+        display: flex; /* Mostra o ícone de hambúrguer em telas pequenas */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        background-color: #1e1e1e;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s;
+        padding: 1rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .nav-links li {
+        margin: 0;
+        padding: 0.8rem 2rem;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        padding: 0.5rem 0;
+        font-size: 1.2rem;
+        display: block;
+    }
+
+    /* Classes para o menu aberto (adicionadas via JS) */
+    .nav-links.active {
+        transform: translateY(0); /* Desliza para baixo */
+        opacity: 1; /* Torna visível */
+        visibility: visible;
+    }
+
+    /* Animação do Hambúrguer para X (quando menu estiver ativo) */
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0; /* Esconde a barra do meio */
+    }
+
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: translateY(11px) rotate(45deg);  /* Gira a barra de cima */
+    }
+
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: translateY(-11px) rotate(-45deg); /* Gira a barra de cima */
+    }
+}
 
 /* Responsividade para a seção de Serviços */
 @media (max-width: 768px) {

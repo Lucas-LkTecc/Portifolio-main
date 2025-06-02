@@ -23,4 +23,10 @@ Dia 5 {30/05/2025} hj vamos dar continuidade ao projeto e vamos entrar na parte 
 - acrescentei a parte do portifólio ao HTML, acrescentei as imagens dos projetos que realizei.
 - estilizei uma parte do css. vou par por hj na parte dos projetos faltando ajustar as imagens dos projetos e responsividade.
 
-Dia 06 {31/05/2025} hj vamos retomar de onde paramos, pretendo terminar essa parte do portifólio hj e realizar algumas alterações se for necessario, tambem pretendo 
+Dia 06 {31/05/2025} hj vamos retomar de onde paramos, pretendo terminar essa parte do portifólio hj e realizar algumas alterações se for necessario, tambem pretendo.
+- terminamos o css
+- demos inicio ao JS
+- ajustamos a responsividade em disponiveis menores
+ 
+Dia 7 {02/06/2025} hj vamos retomar com o JS e vamos pensar em alguns efeitos para o projeto.
+- hoje terminamos a parte principal das linguagens HTML, CSS e JS e demos inicio a estilização avançada do projeto.
