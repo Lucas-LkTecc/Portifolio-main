@@ -30,3 +30,8 @@ Dia 06 {31/05/2025} hj vamos retomar de onde paramos, pretendo terminar essa par
  
 Dia 7 {02/06/2025} hj vamos retomar com o JS e vamos pensar em alguns efeitos para o projeto.
 - hoje terminamos a parte principal das linguagens HTML, CSS e JS e demos inicio a estilização avançada do projeto.
+
+Dia 8 {09/06/2025} hpje conseguimos arrumar o menu hamburger e vammos dar continuidade ao codigo do projeto, vamos arrumar o alguns pontos como: 
+- layout em telas menores
+- adicionar o restanto do JS 
+- melhorar os efeitos do portifólio

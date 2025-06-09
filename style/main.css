@@ -1,6 +1,58 @@
+/* ESTILOS GLOBAIS */
+:root {
+    --primary-color:#FF710D;
+    --secundary-color:orange;
+    --background-color: #121212;
+    --text-color-primary:#f8f9fa;
+    --text-color-secundary:#adb5bd;
+}
+
+body {
+    font-family: "lato",sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color-primary);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Para rolagem suave nos links */
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn.primary {
+    background-color: var(--primary-color);
+    color: var(--text-color-primary);
+}
+
+.btn.secundary {
+    background-color: transparent;
+    color: var(--text-color-primary);
+    border: 1px solid var(--text-color-secundary);
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
 /* CABEÇALHO */
 header {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8); /* Reativar para ver */
     padding: 1rem 2rem;
     position: fixed;
     top: 0;
@@ -8,6 +60,17 @@ header {
     width: 100%;
     z-index: 100; /* Garante que o cabeçalho fique acima de outros elementos */
 }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: transparent;
+    position: relative;
+}
+
 
 /* --- Menu Hambúrguer --- */
 .hamburger-menu {
@@ -17,29 +80,23 @@ header {
     width: 30px;
     height: 25px;
     cursor: pointer;
-    z-index: 200; /* Garante que fique acima de outros elementos */
+    z-index: 101; /* Um z-index um pouco maior que o header (100) */
+    /* NENHUM background-color, border, opacity, position: fixed aqui */
 }
 
 .hamburger-menu .bar {
     width: 100%;
     height: 3px;
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Usa a cor primária das suas variáveis */
     border-radius: 5px;
     transition: all 0.3s ease; /* Transição para animação de X */
 }
+
 /* Esconde os links de navegação e o botão de contato em telas pequenas por padrão */
 .navbar .nav-links,
 .navbar .contact-button {
     /* Por enquanto, vamos ocultá-los apenas via media query. */
     /* O JS vai gerenciar a visibilidade quando o menu estiver aberto. */
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .logo {
@@ -575,4 +632,205 @@ footer {
     font-size: 0.9rem;
     margin-top: 2rem;
     color: var(--text-color-secundary);
+}
+
+
+
+
+/* Responsividade Básica para a seção Hero */
+
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column-reverse; /* Imagem acima do texto em telas menores */
+        text-align: center;
+        padding-top: 6rem; /* Ajuste de padding para mobile */
+    }
+
+    .hero-content {
+        order: 2; /* Garante que o conteúdo fique abaixo da imagem */
+        text-align: center;
+    }
+
+     .hero-image {
+        order: 1; /* Garante que a imagem fique acima do conteúdo */
+        margin-bottom: 2rem;
+        width: 70vw; /* Ajusta a largura da imagem para 70% da largura da viewport */
+        height: 70vw; /* Mantém a altura igual à largura para um círculo perfeito */
+        max-width: 300px; /* Define um tamanho máximo para a imagem (ex: 300px) */
+        max-height: 300px; /* Garante que a altura não exceda o max-width */
+        margin-left: auto; /* Centraliza a imagem */
+        margin-right: auto; /* Centraliza a imagem */
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Responsividade do menu 'Hamburguer' e Cabeçalho */
+@media (max-width: 768px) { /* OU 992px, dependendo da sua preferência de breakpoint */
+    
+    /* --- Ajustes para o cabeçalho em mobile --- */
+    header {
+        padding: 1rem 1.5rem; /* Ajusta o padding horizontal do cabeçalho em mobile */
+    }
+
+    .navbar {
+        flex-wrap: nowrap; /* Garante que logo e hambúrguer fiquem em uma linha */
+        justify-content: space-between; /* Mantém logo na esquerda e hambúrguer na direita */
+        width: 100%; /* Garante que a navbar ocupe a largura total do header */
+        /* Remova background-color e overflow temporários se ainda tiver */
+    }
+
+    .navbar .contact-button {
+        display: none !important; /* Oculta o botão de contato em telas pequenas e força a invisibilidade */
+    }
+
+    /* --- Menu Hambúrguer em Mobile --- */
+    .hamburger-menu {
+        display: flex !important; /* Mostra o ícone de hambúrguer em telas pequenas */
+        background-color: transparent; /* Certifica-se de que não tem cor de fundo de debug */
+        border: none; /* Remove bordas de debug */
+        opacity: 1; /* Garante que esteja completamente visível */
+        /* As regras de position: fixed, top, right DEVEM ser removidas daqui também, se estiverem */
+    }
+
+    /* --- Links de Navegação (Menu Mobile Escondido) --- */
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        background-color: #1e1e1e; /* Fundo do menu quando aberto */
+        position: absolute;
+        top: 100%; /* Posiciona abaixo do cabeçalho */
+        left: 0;
+        transform: translateY(-100%); /* Esconde acima da tela por padrão */
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s;
+        padding: 1rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        z-index: 100; /* Pode ter o mesmo z-index do header, pois ficará por cima quando aberto */
+    }
+
+    .nav-links li {
+        margin: 0;
+        padding: 0.8rem 2rem;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        padding: 0.5rem 0;
+        font-size: 1.2rem;
+        display: block;
+    }
+
+    /* --- Classes para o menu aberto (adicionadas via JS) --- */
+    .nav-links.active {
+        transform: translateY(0); /* Desliza para baixo */
+        opacity: 1; /* Torna visível */
+        visibility: visible;
+    }
+
+    /* --- Animação do Hambúrguer para X (quando menu estiver ativo) --- */
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0; /* Esconde a barra do meio */
+    }
+
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: translateY(11px) rotate(45deg); /* Gira a barra de cima */
+    }
+
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: translateY(-11px) rotate(-45deg); /* Gira a barra de baixo */
+    }
+}
+
+/* Responsividade para a seção de Serviços */
+@media (max-width: 768px) {
+    .services-grid {
+        flex-direction: column; /* Cards empilhados em telas menores */
+        align-items: center;
+    }
+    .service-card {
+        max-width: 90%; /* Ajusta a largura para telas menores */
+    }
+}
+
+/* Responsividade para a seção Sobre Mim */
+@media (max-width: 992px) {
+    .about-section {
+        flex-direction: column; /* Pilha a imagem e o texto em telas menores */
+        text-align: center;
+        gap: 3rem;
+    }
+    .about-image {
+        margin-right: 0; /* Remove o margin-right */
+        margin-bottom: 2rem; /* Adiciona margin-bottom */
+    }
+    .about-content {
+        text-align: center;
+    }
+    .about-content h2::after {
+        margin: 10px auto 0; /* Centraliza a linha de destaque */
+    }
+    .tech-icons {
+        justify-content: center; /* Centraliza os ícones em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .about-image {
+        width: 300px; /* Reduz o tamanho da imagem em telas muito pequenas */
+        height: 300px;
+    }
+    .about-content h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Responsividade para a seção de Portfólio */
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        gap: 1.5rem;
+    }
+    .portfolio-item {
+        max-width: 90%; /* Limita a largura dos cards para melhor visualização */
+        margin: 0 auto; /* Centraliza os cards */
+    }
+}
+
+/* Responsividade para a seção de Contato */
+@media (max-width: 768px) {
+    .contact-form .form-group {
+        flex-direction: column; /* Campos empilhados em telas menores */
+        gap: 1rem;
+    }
+}
+
+/* Responsividade para o Rodapé */
+@media (max-width: 768px) {
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .footer-links a {
+        margin: 0; /* Remove margem lateral quando empilhado */
+    }
 }

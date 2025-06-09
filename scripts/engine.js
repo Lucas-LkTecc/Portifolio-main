@@ -56,17 +56,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const navItems = document.querySelectorAll('.nav-links li a'); // Seleciona todos os links do menu
 
     // Fechar o menu ao clicar em um link de navegação (para scroll suave)
-    hamburgerMenu.addEventListener('clicl', () => {
+    hamburgerMenu.addEventListener('click', () => {
         hamburgerMenu.classList.toggle('active'); // Remove a classe 'active' do hambúrguer (fecha o X)
         navLinks.classList.toggle('active');// Remove a classe 'active' do menu (esconde o menu)
     })
 
     document.addEventListener('click', (event) => {
-        if (!navLinks.contains(event.target) && !hamburgerMenu.contains(event.target) && navLinks.classList('active')){
+        if (!navLinks.contains(event.target) && !hamburgerMenu.contains(event.target) && navLinks.classList.contains('active')){
             hamburgerMenu.classList.remove('active');
             navLinks.classList.remove('active');
         }
-    })
+    });
 });
 
 
