@@ -71,7 +71,6 @@ header {
     position: relative;
 }
 
-
 /* --- Menu Hambúrguer --- */
 .hamburger-menu {
     display: none; /* Por padrão, oculto em telas grandes */
@@ -418,96 +417,54 @@ header {
 }
 
 /* --- Seção de Portfólio --- */
-.portfolio-section {
+#portfolio {
     padding: 6rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center; /* Centraliza o título e os filtros */
-}
-
-.portfolio-section h2 {
-    font-size: 3rem;
-    margin-bottom: 3rem;
-    position: relative;
-    display: inline-block;
-}
-
-.portfolio-section h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: var(--text-color-secundary);
-    margin: 10px auto 0; /* Centraliza a linha */
-    border-radius: 2px;
-}
-
-.portfolio-filters {
-    margin-bottom: 3rem;
-    display: flex;
-    justify-content: center; /* Centraliza os botões de filtro */
-    flex-wrap: wrap; /* Permite que os filtros quebrem a linha */
-    gap: 1.5rem; /* Espaço entre os botões */
-}
-
-.portfolio-filters .filter-btn {
-    background-color: #1B1B1B; /* Fundo dos botões de filtro */
+    background-color: var(--background-color);
+    text-align: center;
     color: var(--text-color-secundary);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px; /* Botões mais arredondados */
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-.portfolio-filters .filter-btn:hover, 
-.portfolio-filters .filter-btn.active {
-    background-color: var(--primary-color);
-    color: var(--text-color-primary3);
-    border-color: var(--primary-color);
-}
-
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grade responsiva */
-    gap: 2rem; /* Espaço entre os cards de projeto */
-}
-
-.portfolio-item {
-    background-color: #1B1B1B;
-    border-radius: 10px;
-    overflow: hidden; /* Garante que a imagem se ajuste ao border-radius */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: left;
-    position: relative; /* Para possíveis overlays ou ícones */
-}
-
-.portfolio-item:hover {
-    transform: translate(-10px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-}
-
-.portfolio-item img {
-    width: 100%;
-    height: 350px; /* Altura fixa para as imagens dos projetos */
-    object-fit: cover; /* Garante que a imagem cubra a área sem distorção */
-    display: block; /* Remove o espaço extra abaixo da imagem */
-} 
-
-.portfolio-item h3 {
-    font-size: 1.5rem;
-    margin: 1.5rem 1.5rem 0.5rem;
+#portfolio h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
     color: var(--primary-color);
 }
 
-.portfolio-item p {
-    font-size: 0.95rem;
-    color: var(--text-color-secundary);
-    margin: 0 1.5rem 1.5rem;
+/* --- Estilos Visuais Essenciais para Cada Cartão de Projeto (.project-card) --- */
+/* Estes são os estilos que definem a aparência de cada item do projeto */
+.project-card {
+    background-color: #1B1B1B;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    text-align: left; /* Alinhe o texto dentro do card*/
+    display: flex; /* Para organizar o conteúdo interno do card */
+    flex-direction: column; /* Conteúdo em coluna dentro do card */
+    justify-content: space-between;  /* Espaço entre título, descrição e botões */
+    min-height: 350px; /* Garante uma altura mínima consistente para os cards */
+    color: var(--text-color-primary);
 }
+
+.project-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--text-color-primary);
+}
+
+.project-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Faz o parágrafo ocupar o espaço disponível */
+}
+
+.project-card .project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem; /* Espaço acima dos botões */
+}
+
+.project-card .project-links-button
 
 /* --- Seção de Contato --- */
 .contact-section {

@@ -35,3 +35,11 @@ Dia 8 {09/06/2025} hpje conseguimos arrumar o menu hamburger e vammos dar contin
 - layout em telas menores
 - adicionar o restanto do JS 
 - melhorar os efeitos do portifólio
+
+Dia 9 {11/06/2025} hoje realizamos alterações significativas ao projeto, começamos a alterar o estilo do Portifólio.
+- alteramos o html da socção do portifólio
+- alteramos o css da socção do portifólio
+- e retiramos um projeto do portifólio (strange things)
+
+pretendo dar continuidade a essa parte e arrumar alguns contratempos que estamos tendo dentro do projeto.
+
