@@ -458,13 +458,104 @@ header {
     flex-grow: 1; /* Faz o parágrafo ocupar o espaço disponível */
 }
 
-.project-card .project-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem; /* Espaço acima dos botões */
+.project-card .project-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
 }
 
-.project-card .project-links-button
+.project-card:hover .project-image {
+    transform: scale(1.03);
+}
+
+.project-card .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem; /* Espaço acima dos botões */
+    justify-content: center;
+}
+
+.project-card .project-link-button {
+    background-color: var(--primary-color);
+    color: var(--text-color-primary);
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+    white-space: nowrap; /* Evita que o texto do botão quebre */
+}
+
+.project-card .project-link-button:hover {
+    background-color: orangered;
+    transform: translateY(-2px);
+}
+
+.portfolio-carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 730px;
+    margin: 2rem auto;
+    overflow: hidden;
+    padding: 0 40px;
+}
+
+.portfolio-carousel-wrapper {
+    display: flex; /* Faz todos os 'project-card's ficarem em uma única linha */
+    transition: transform 0.5s ease-in-out; /* Transição suave para o efeito de slide */
+    scroll-snap-type: x mandatory; /* Ajuda a "grudar" no próximo slide ao rolar (para acessibilidade/fallback) */
+    -webkit-overflow-scrolling: touch;  /* Melhora o scroll em dispositivos iOS */
+    overflow: auto; /* Permite rolagem horizontal manual (será controlada pelo JS) */
+}
+
+.portfolio-carousel-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.portfolio-carousel-wrapper {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.project-card {
+    flex: 0 0 300px;
+    margin-right: 20px;
+    scroll-snap-align: start;
+}
+
+.project-card:last-child {
+    margin-right: 0;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--text-color-primary);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 10;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-control:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-control.prev {
+    left: 0;
+}
+
+.carousel-control.next {
+    right: 0;
+}
 
 /* --- Seção de Contato --- */
 .contact-section {
@@ -769,6 +860,68 @@ footer {
     .portfolio-item {
         max-width: 90%; /* Limita a largura dos cards para melhor visualização */
         margin: 0 auto; /* Centraliza os cards */
+    }
+}
+
+/* --- Responsividade da Seção de Portfólio e Carrossel --- */
+@media (max-width: 992px) { /* Breakpoint para tablets */
+    #portfolio {
+        padding: 4rem 1.5rem;
+    }
+    .portfolio-carousel-container {
+        max-width: 700px; /* Ajusta a largura máxima para tablets */
+    }
+    .project-card {
+        flex: 0 0 300px; /* Mantém 300px ou ajuste se quiser 2 cards */
+        margin-right: 15px;
+    }
+}
+
+@media (max-width: 768px) { /* Breakpoint para celulares grandes/tablets pequenos */
+    #portfolio {
+        padding: 3rem 1rem; /* Mais compacto em mobile */
+    }
+
+    #portfolio h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .portfolio-carousel-container {
+        padding: 0 10px; /* Ajusta o padding para telas menores */
+        max-width: none; /* Permite que o carrossel ocupe a largura total disponível */
+    }
+    .carousel-control {
+        font-size: 1.2rem;
+        padding: 8px 12px;
+    }
+    .project-card {
+        flex: 0 0 85%; /* Faz o card ocupar 85% da largura da tela para mobile */
+        margin-right: 15px; /* Espaço entre os cards em mobile */
+        min-height: 400px; /* Ajusta a altura mínima para mobile */
+    }
+    .project-card .project-image {
+        height: 180px; /* Um pouco menor em telas pequenas */
+    }
+}
+
+@media (max-width: 480px) { /* Breakpoint para celulares pequenos */
+    .portfolio-carousel-container {
+        padding: 0; /* Sem padding nas laterais, para que os botões fiquem nas bordas extremas */
+    }
+    .carousel-control {
+        font-size: 1rem;
+        padding: 6px 10px;
+        background-color: rgba(0, 0, 0, 0.7); /* Mais visível em telas pequenas */
+    }
+    .project-card {
+        flex: 0 0 95%; /* Ajusta para ocupar quase toda a largura em celulares muito pequenos */
+        margin-right: 10px;
+        padding: 1rem;
+        min-height: 380px;
+    }
+    .project-card .project-image {
+        height: 160px;
     }
 }
 
