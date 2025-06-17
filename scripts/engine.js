@@ -141,6 +141,69 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => {
         goToSlide(currentIndex);
     });
+
+
+    const contactForm = document.querySelector('.contact-form');
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+
+
+    const messageContainer = document.createElement('div');
+    messageContainer.style.marginTop = '1rem';
+    messageContainer.style.padding = '0.8rem';
+    messageContainer.style.borderRadius = '5px';
+    messageContainer.style.textAlign = 'center';
+    messageContainer.style.fontSize = '0.9rem';
+    messageContainer.style.display = 'none';
+
+    contactForm.insertBefore(messageContainer, submitButton); // insere antes do botão
+
+    contactForm.addEventListener('submit', async (event) => {
+        event.preventDefault(); // Impede o envio padrão do formulário (que recarregaria a página)
+
+        const form = event.target;
+        const formData = new FormData(form);
+
+        // Opcional: Desabilitar o botão para evitar múltiplos cliques
+        submitButton.disabled = true;
+        submitButton.textContent = 'Enviando...';
+        messageContainer.style.display = 'none';
+
+        try {
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    'Accept': 'appication/json' // Importante para o Formspree retornar JSON
+                }
+            });
+
+            if(response.ok) {
+                messageContainer.textContent = 'Sua mensagem foi enviada com sucesso!';
+                messageContainer.style.backgroundColor = 'rgba(76, 175, 80, 0.2)';
+                messageContainer.style.color = '#4caf50';
+                form.reset();
+            } else {
+                const data = await response.json();
+                if (Object.hasOwnProperty.call(data, 'errors')) {
+                    messageContainer.textContent = data['errors'].map(error => error["message"]).join(", ");
+                } else {
+                    messageContainer.textContent = 'Ops! algo deu errado ao enviar sua menssagem.';
+                }
+                messageContainer.style.backgroundColor = 'rgba(255, 0, 0, 0.2)';
+                messageContainer.style.color = '#F44336';
+            }
+        } catch (error) {
+            console.error('Erro na requisição:', error);
+            messageContainer.textContent = 'Erro de conexão. Por favor, tente novamente mais tarde.';
+            messageContainer.style.backgroundColor = 'rgba(255, 0, 0, 0.2)'; // Fundo vermelho claro
+            messageContainer.style.color = '#F44336'; // Texto vermelho
+        } finally {
+            submitButton.disabled = false; // Reabilita o botão
+            submitButton.textContent = 'Enviar Mensagem';
+            messageContainer.style.display = 'block'; // Mostra a mensagem
+        }
+    })
+
 });
 
 
