@@ -80,6 +80,30 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks.classList.remove('active');
         }
     });
+
+    // --- Funcionalidade do Botão "Contate-me" ---
+    const contactButton = document.querySelector('.contact-button');
+
+    if (contactButton) {
+        contactButton.addEventListener('click', function(e) {
+            e.preventDefault(); // Impede o comportamento padrão do link de âncora (para usar scroll-behavior: smooth do CSS)
+
+            const targetSection = document.querySelector(this.getAttribute('href')); // Pega o ID da seção do href
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' }); // Rola suavemente até a seção
+            }
+
+            // Opcional: Se você tiver um menu hambúrguer, pode adicionar lógica para fechá-lo aqui
+            // Exemplo (adapte conforme seu código do menu):
+            const navLinks = document.querySelector('.nav-links');
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            if (navLinks.classList.contains('active')) { // Se o menu estiver aberto
+                navLinks.classList.remove('active');
+                hamburgerMenu.classList.remove('active');
+            }
+        });
+    }
+
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -202,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
             submitButton.textContent = 'Enviar Mensagem';
             messageContainer.style.display = 'block'; // Mostra a mensagem
         }
-    })
+    });
 
 });
 
