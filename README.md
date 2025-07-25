@@ -36,18 +36,4 @@ Este projeto foi construído do zero, focando em um design responsivo e interati
 * **CSS3:** Para a estilização, layout responsivo e animações.
 * **JavaScript:** Para toda a interatividade da página, como a navegação suave, o menu hambúrguer, o efeito de digitação e o carrossel de projetos.
 * **Font Awesome:** Para os ícones sociais e outros elementos visuais.
-
-## Como Executar
-
-1.  **Clone o repositório:**
-    ```bash
-    git clone [Link do seu repositório GitHub aqui]
-    ```
-    Ou baixe os arquivos diretamente.
-2.  **Abra o arquivo `index.html`:** Simplesmente abra o arquivo no seu navegador web de preferência.
-
-## Autor
-
-* **Lucas Nascimento** - [Seu Link do LinkedIn] - [Seu Link do GitHub] - [Seu Email]
-
 ---
