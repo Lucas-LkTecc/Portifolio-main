@@ -255,8 +255,8 @@ header {
 }
 
 .about-image img {
-    width: 200%;
-    height: 125%;
+    width: 150%;
+    height: 115%;
     object-fit: cover; /* Garante que a imagem cubra a área sem distorção */
 }
 
@@ -536,7 +536,7 @@ header {
 footer {
     background-color: #1B1B1B;
     color: var(--text-color-secundary);
-    padding: 3rem 2rem;
+    padding: 1rem 1rem;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.05); /* Uma borda sutil no topo */
 }
@@ -549,6 +549,7 @@ footer {
     color: var(--text-color-secundary);
     margin: 0 1rem;
     transition: color 0.3s ease;
+    
     font-size: 1rem;
 }
 
@@ -600,7 +601,7 @@ footer {
 
      .hero-image {
         order: 1; /* Garante que a imagem fique acima do conteúdo */
-        margin-bottom: 2rem;
+        margin-bottom: 10rem;
         width: 70vw; /* Ajusta a largura da imagem para 70% da largura da viewport */
         height: 70vw; /* Mantém a altura igual à largura para um círculo perfeito */
         max-width: 300px; /* Define um tamanho máximo para a imagem (ex: 300px) */
@@ -633,13 +634,13 @@ footer {
     
     /* --- Ajustes para o cabeçalho em mobile --- */
     header {
-        padding: 1rem 1.5rem; /* Ajusta o padding horizontal do cabeçalho em mobile */
+        padding: 1rem 1rem; /* Ajusta o padding horizontal do cabeçalho em mobile */
     }
 
     .navbar {
         flex-wrap: nowrap; /* Garante que logo e hambúrguer fiquem em uma linha */
         justify-content: space-between; /* Mantém logo na esquerda e hambúrguer na direita */
-        width: 100%; /* Garante que a navbar ocupe a largura total do header */
+        width: 90%; /* Garante que a navbar ocupe a largura total do header */
         /* Remova background-color e overflow temporários se ainda tiver */
     }
 
@@ -715,7 +716,7 @@ footer {
     }
     .about-image {
         margin-right: 0; /* Remove o margin-right */
-        margin-bottom: 2rem; /* Adiciona margin-bottom */
+        margin-bottom: 0rem; /* Adiciona margin-bottom */
     }
     .about-content {
         text-align: center;
@@ -786,7 +787,7 @@ footer {
     .project-card {
         flex: 0 0 85%; /* Faz o card ocupar 85% da largura da tela para mobile */
         margin-right: 15px; /* Espaço entre os cards em mobile */
-        min-height: 400px; /* Ajusta a altura mínima para mobile */
+        min-height: 380px; /* Ajusta a altura mínima para mobile */
     }
     .project-card .project-image {
         height: 180px; /* Um pouco menor em telas pequenas */
@@ -824,9 +825,9 @@ footer {
 /* Responsividade para o Rodapé */
 @media (max-width: 768px) {
     .footer-links {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
+        display: inline-flex;
+        text-align: center;
+        gap: 3rem;
     }
     .footer-links a {
         margin: 0; /* Remove margem lateral quando empilhado */
